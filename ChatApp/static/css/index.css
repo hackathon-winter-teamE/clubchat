@@ -1,0 +1,216 @@
+.background-1-icon {
+  height: 1048px;
+  width: 1482px;
+  position: absolute;
+  margin: 0 !important;
+  right: 147px;
+  bottom: -574px;
+  object-fit: cover;
+}
+.p {
+  margin-block-start: 0;
+  margin-block-end: 21px;
+}
+.p1 {
+  margin: 0;
+  font-size: var(--font-size-5xl);
+}
+.div {
+  position: absolute;
+  margin: 0 !important;
+  right: 362px;
+  bottom: -35px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+.club-chat {
+  margin: 0;
+  height: 317px;
+  flex: 1;
+  position: relative;
+  font-size: 200px;
+  font-weight: 400;
+  font-family: var(--font-audiowide);
+  color: #0012b4;
+  display: inline-block;
+  white-space: nowrap;
+  max-width: 100%;
+  z-index: 2;
+}
+.background-1-parent,
+.desktop-1-inner,
+.frame-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.background-1-parent {
+  width: 1777px;
+  justify-content: flex-start;
+  position: relative;
+  max-width: 110%;
+  flex-shrink: 0;
+}
+.desktop-1-inner,
+.frame-wrapper {
+  padding: 0;
+  box-sizing: border-box;
+}
+.frame-wrapper {
+  width: 1609px;
+  justify-content: flex-start;
+  max-width: 112%;
+  flex-shrink: 0;
+}
+.desktop-1-inner {
+  align-self: stretch;
+  justify-content: flex-end;
+  max-width: 100%;
+  text-align: center;
+  font-size: var(--font-size-13xl);
+  color: #707070;
+  font-family: var(--font-noto-sans-jp);
+}
+.component-1-child {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--color-lightcoral);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+}
+.b,
+.component-1 {
+  position: relative;
+  z-index: 1;
+}
+.b {
+  font-size: var(--font-size-21xl);
+  font-family: var(--font-inter);
+  color: var(--color-gray);
+  text-align: center;
+}
+.component-1 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-5xs) var(--padding-2xl) var(--padding-5xs)
+    var(--padding-4xl);
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.component-2-child {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--color-lightcoral);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+}
+.b1,
+.component-2 {
+  position: relative;
+  z-index: 1;
+}
+.b1 {
+  height: 48px;
+  font-size: var(--font-size-21xl);
+  display: inline-block;
+  font-family: var(--font-inter);
+  color: var(--color-gray);
+  text-align: center;
+}
+.component-2 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-5xs) var(--padding-2xl) var(--padding-5xs)
+    var(--padding-4xl);
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.component-1-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 20px;
+  gap: 40px;
+}
+.desktop-1,
+.top {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+.desktop-1 {
+  flex: 1;
+  background-color: #e4e0cd;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 145px 0 178px;
+  gap: var(--gap-197xl);
+  max-width: 100%;
+}
+.top {
+  width: 100%;
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 1025px) {
+  .desktop-1 {
+    padding-top: 94px;
+    padding-bottom: 116px;
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 975px) {
+  .club-chat {
+    font-size: 80px;
+  }
+  .b,
+  .b1 {
+    font-size: var(--font-size-13xl);
+  }
+}
+@media screen and (max-width: 725px) {
+  .desktop-1 {
+    gap: var(--gap-197xl);
+    padding-top: 61px;
+    padding-bottom: 75px;
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .div {
+    font-size: 19px;
+  }
+  .club-chat {
+    font-size: 50px;
+  }
+  .b,
+  .b1 {
+    font-size: var(--font-size-5xl);
+  }
+  .desktop-1 {
+    gap: var(--gap-197xl);
+  }
+}
