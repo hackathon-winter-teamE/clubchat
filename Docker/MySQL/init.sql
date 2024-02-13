@@ -1,4 +1,3 @@
-
 DROP DATABASE chatapp;
 DROP USER 'testuser';
 
@@ -7,28 +6,47 @@ CREATE DATABASE chatapp;
 USE chatapp
 GRANT ALL PRIVILEGES ON chatapp.* TO 'testuser';
 
+CREATE TABLE clubs(
+    club_id INT PRIMARY KEY,
+    club_name varchar(255) UNIQUE NOT NULL
+);
+
 CREATE TABLE users (
-    uid varchar(255) PRIMARY KEY,
+    uid INT PRIMARY KEY,
     user_name varchar(255) UNIQUE NOT NULL,
     email varchar(255) UNIQUE NOT NULL,
-    password varchar(255) NOT NULL
+    password varchar(255) NOT NULL,
+    club_id INT NOT NULL  REFERENCES clubs(club_id)
 );
 
 CREATE TABLE channels (
     id serial PRIMARY KEY,
-    uid varchar(255) REFERENCES users(uid),
+    uid varchar(255)  REFERENCES users(uid),
     name varchar(255) UNIQUE NOT NULL,
-    abstract varchar(255)
-);
+    abstract varchar(255),
+    club_channels int NOT NULL  REFERENCES users(club_id)
+    );
 
 CREATE TABLE messages (
     id serial PRIMARY KEY,
-    uid varchar(255) REFERENCES users(uid),
+    uid varchar(255)  REFERENCES users(uid),
     cid integer REFERENCES channels(id) ON DELETE CASCADE,
     message text,
     created_at timestamp not null default current_timestamp
 );
 
-INSERT INTO users(uid, user_name, email, password)VALUES('970af84c-dd40-47ff-af23-282b72b7cca8','テスト','test@gmail.com','37268335dd6931045bdcdf92623ff819a64244b53d0e746d438797349d4da578');
-INSERT INTO channels(id, uid, name, abstract)VALUES(1, '970af84c-dd40-47ff-af23-282b72b7cca8','ぼっち部屋','テストさんの孤独な部屋です');
-INSERT INTO messages(id, uid, cid, message)VALUES(1, '970af84c-dd40-47ff-af23-282b72b7cca8', '1', '誰かかまってください、、')
+CREATE TABLE replies (
+    id serial PRIMARY KEY,
+    uid varchar(255) REFERENCES users(uid),
+    message_id integer REFERENCES message(id) ON DELETE CASCADE,
+    message text,
+    created_at timestamp not null default current_timestamp
+);
+
+
+INSERT INTO clubs(club_id,club_name)
+VALUES(1,'Baseball'),
+      (2,'Soccer'),
+      (3,'art'),
+      (4,'Judo');
+
