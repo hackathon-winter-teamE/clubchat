@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-inter: Inter;
+  --font-audiowide: Audiowide;
+  --font-noto-sans-jp: "Noto Sans JP";
+
+  /* font sizes */
+  --font-size-21xl: 40px;
+  --font-size-5xl: 24px;
+  --font-size-13xl: 32px;
+
+  /* Colors */
+  --color-gray: rgba(0, 0, 0, 0.5);
+  --color-lightcoral: rgba(255, 138, 138, 0.5);
+
+  /* Gaps */
+  --gap-197xl: 216px;
+
+  /* Paddings */
+  --padding-5xs: 8px;
+  --padding-2xl: 21px;
+  --padding-4xl: 23px;
+
+  /* Border radiuses */
+  --br-xl: 20px;
+}

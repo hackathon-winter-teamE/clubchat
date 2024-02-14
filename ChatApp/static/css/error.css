@@ -1,0 +1,127 @@
+/* エラー画面のCSS */
+
+.error {
+  margin: 0;
+}
+
+.error-wrapper {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E4E0CD;
+}
+.bg-img{
+  background: url("../img/Background.png");
+  width: 100%;
+  min-height: 100vh;
+  background-size:cover,50%;
+  background-position:50%;
+  position: relative;
+}
+.bg-img::after {
+  content: '';
+  background-color: rgba(228,224,205,0.85);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.error-content {
+  height: 70%;
+  width: 70%;
+  margin: auto;
+  color: #707070;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.error-title {
+  display: inline-block;
+  position: relative;
+  font-size: 5.2em;
+  font-weight: 900;
+  font-family: 'Audiowide', sans-serif;
+  position: relative; /* テキストを一番上へ */
+  z-index: 1; /* テキストを一番上へ */
+}
+
+.error-description {
+  text-align: center;
+  font-size: 1.5em;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.error404or500 {
+  margin-top: 10px;
+}
+
+.error-description p {
+  margin-bottom: 3rem;
+}
+
+.error-button {
+  display:  inline-block;
+  margin: auto;
+  max-width: 320px;
+  padding: 0.5rem 3rem;
+  font-family: sans-serif;
+  font-size: 1.2em;
+  text-align: center;
+  color: rgba(0,0,0,0.5);  /* 文字色 */
+  text-decoration: none;  /* 下線消去 */
+  font-weight: bold;
+  cursor: pointer;  /* カーソル   */
+  transition: .3s;  /* なめらか変化 */
+  background-color: #f2b5ac;
+  border: none;  /* ライン消去 */
+  border-radius: 15px;
+  box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.12), 
+  0 1px 5px 0 rgba(0, 0, 0, 0.12), 
+  0 3px 1px -2px rgba(0, 0, 0, 0.2); 
+  position: relative;
+  z-index: 1;
+}
+.error-button:hover{
+  background: #FF8A8A;
+  position: relative;
+  z-index: 1;
+}
+
+.error-button a {
+  color: rgba(0,0,0,0.5);  /* 文字色 */
+  text-decoration: none;  /* 下線消去 */
+  font-weight: 100;
+}
+
+.error-gif {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+}
+
+/* レスポンシブ */
+
+@media screen and (max-width: 440px) {
+  .error-text {
+    font-size: 3em;
+    font-weight: 900;
+  }
+  .error-description {
+    margin-top: 2em;
+  }
+  .error-description p {
+    margin-bottom: 3rem;
+  }
+}
