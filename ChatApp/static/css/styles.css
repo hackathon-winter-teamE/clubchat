@@ -1,0 +1,5 @@
+/* 全てのCSSをまとめてエクスポート */
+
+@import "global.css";
+@import "index.css";
+
