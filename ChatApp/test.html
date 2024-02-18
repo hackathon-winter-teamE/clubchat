@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viwport" content="width=device-width,initial-scale=1.0">
+    <title>Docment</title>
+</head>
+
+<body>
+    <div>
+        <form method="post">
+    <input 
+        type="text"
+        placeholder="Name"
+        name="name"
+        />
+        <input 
+        type="text"
+        placeholder="Email"
+        name="email"
+        />
+        <input
+        type="password"
+        placeholder="Password"
+        name="password"
+        />
+        <select name = "club_id">
+            {% for clubs in clubs %}
+            <option value="{{clubs.club_id}}">{{clubs.club_name}}</option>
+            {% endfor %}
+        </select>
+        <button>送信</button>
+        </form>
+    </div>
+</body>
+</html>

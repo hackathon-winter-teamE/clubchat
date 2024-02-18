@@ -1,14 +1,14 @@
-import pymysql
+import mysql
 from util.DB import DB
 from flask import abort
 
 class dbConnect:
-    def createUser(uid, user_name, email, password,club_id):
+    def createUser(user):
         try:
             conn = DB.getConnection()
             cur = conn.cursor()
-            sql="INSERT INTO users (uid,user_name, email, password,club_id) VALUES (%s,%s,%s,%s,%s);"
-            cur.execute(sql,(uid,user_name, email, password,club_id))
+            sql="INSERT INTO users (uid,name, email, password,club) VALUES (%s,%s,%s,%s,%s,%s);"
+            cur.execute(sql,(user.uid.user.user_name, user.email, user.password,user.club_id))
             conn.commit()
         except Exception as e:
             print(str(e) + 'が発生しています')
