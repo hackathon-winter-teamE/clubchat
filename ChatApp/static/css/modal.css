@@ -11,6 +11,7 @@ body {
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
+  border-radius: 8px;
 }
 #overlay {
   display: none;
@@ -25,7 +26,66 @@ body {
 
 .close {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0px;
+  right: 0px;
   cursor: pointer;
+  padding-right: 10px;
+}
+
+h2 {
+  border-bottom: 2px solid #e7e7e7;
+}
+
+label {
+  display: block;
+text-align: left;
+}
+
+input {
+  font-size: 16px;
+  margin-bottom: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  background-color: #e7e7e7;
+}
+
+select {
+  margin-bottom: 8px;
+  width: 100%;
+  font-size: 16px;
+
+}
+
+.login-button {
+  width: 80px;
+  height: 30px;
+  background-color: #1A69C6;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-top: 16px;
+  margin-right: 85px;
+}
+
+.registration-button {
+  width: 80px;
+  height: 30px;
+  background-color: #1A69C6;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-top: 16px;
+  margin-right: 85px;
+}
+
+.close-button {
+  width: 80px;
+  height: 30px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  font-size: 16px;
 }

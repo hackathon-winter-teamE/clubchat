@@ -1,39 +1,45 @@
 <div id="overlay"></div>
 
-<!-- ログインモーダル -->
-<div id="loginModal" class="modal">
-    <span class="close" onclick="closeModal('loginModal')">&times;</span>
-    <h2>ログイン</h2>
-    <form onsubmit="submitLoginForm(); return false;">
-        <label for="loginEmail">メールアドレス:</label>
-        <input type="email" id="loginEmail" required>
-        <br>
-        <label for="loginPassword">パスワード:</label>
-        <input type="password" id="loginPassword" required>
-        <br>
-        <button type="submit">ログイン</button>
-    </form>
-    <button onclick="closeModal('loginModal')">閉じる</button>
-</div>
-
 <!-- 新規登録モーダル -->
 <div id="registrationModal" class="modal">
-    <span class="close" onclick="closeModal('registrationModal')">&times;</span>
-    <h2>新規登録</h2>
-    <form onsubmit="submitRegistrationForm(); return false;">
-        <label for="name">名前:</label>
-        <input type="text" id="name" required>
-        <br>
-        <label for="registrationEmail">メールアドレス:</label>
-        <input type="email" id="registrationEmail" required>
-        <br>
-        <label for="registrationPassword">パスワード:</label>
-        <input type="password" id="registrationPassword" required>
-        <br>
-        <label for="registrationPassword">確認用パスワード:</label>
-        <input type="password" id="registrationPassword2" required>
-        <br>
-        <label for="signup-club-input">Club</label>
+  <span class="close" onclick="closeModal('registrationModal')">&times;</span>
+  
+  <form class="registration-form" method="post">
+      <h2>Club Chat 新規登録</h2>
+      <div>
+        <label for="name">名前</label>
+        <input
+          type="text"
+          placeholder="Name"
+          name="name"
+          id="name-input" required>
+      </div>
+      <div>
+        <label for="registrationEmail">メールアドレス</label>
+        <input
+          type="email"
+          placeholder="Email"
+          name="email"
+          id="email-input" required>
+      </div>
+      <div>
+        <label for="registrationPassword">パスワード</label>
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          id="password-input" required>
+      </div>
+      <div>
+        <label for="registrationPassword">確認用パスワード</label>
+        <input
+          type="password"
+          placeholder="Password"
+          name="password2"
+          id="password-input" required>
+      </div>
+      <div>
+        <label for="signup-club-input">部活</label>
         <select name=”club” id="signup-club-serect" required>
           <option value="" disabled selected style="display:none;">選択してください</option>
           <optgroup label="運動部">
@@ -51,7 +57,7 @@
             <option value=”karate”>空手</option>
             <option value=”baseball”>野球</option>
             <option value=”trackandfield”>陸上</option>
-         </optgroup>
+          </optgroup>
           <optgroup label="文化部">
             <option value=”igo”>囲碁</option>
             <option value=”drama”>演劇</option>
@@ -66,10 +72,11 @@
             <option value=”art”>美術</option>
             <option value=”literature”>文芸</option>
             <option value=”broadcasting”>放送</option>
-         </optgroup>
+          </optgroup>
         </select>
-        <br>
-        <button type="submit">登録</button>
-    </form>
-    <button onclick="closeModal('registrationModal')">閉じる</button>
+      </div>
+    <button class="registration-button" type="submit">登録</button>
+    <button class="close-button" onclick="closeModal('registrationModal')">閉じる</button>
+  </form>
+  
 </div>

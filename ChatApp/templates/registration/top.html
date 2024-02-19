@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-
+    <link rel="icon" href="../static/img/favicon.ico" />
     <link
     rel="stylesheet"
     href="{{url_for('static',filename='css/top.css')}}"
@@ -49,7 +49,7 @@
       <div class="btn-container">
         <button class="login-btn" onclick="openModal('loginModal')"><span>ログイン</span></button>
         <button class="registration-btn" onclick="openModal('registrationModal')"><span>新規登録</span></button>
-        {% include 'modal/top_modal.html' %}
+        {% include 'modal/login.html' %}{% include 'modal/registration.html' %}
       </div>
     </div>
     
