@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  line-height: normal;
+  background-size: cover;
+  background-image: url(../img/Background.png);
+}
+
+:root {
+  /* fonts */
+  --font-inter: Inter;
+  --font-audiowide: Audiowide;
+  --font-noto-sans-jp: "Noto Sans JP";
+
+  /* font sizes */
+  --font-size-21xl: 40px;
+  --font-size-5xl: 24px;
+  --font-size-13xl: 32px;
+
+  /* Colors */
+  --color-gray: rgba(0, 0, 0, 0.5);
+  --color-lightcoral: rgba(255, 138, 138, 0.5);
+
+  /* Gaps */
+  --gap-197xl: 216px;
+
+  /* Paddings */
+  --padding-5xs: 8px;
+  --padding-2xl: 21px;
+  --padding-4xl: 23px;
+
+  /* Border radiuses */
+  --br-xl: 20px;
+}
+/* ロゴテキスト */
+.logo-wrapper {
+  margin-top: 8%;
+  text-align: center;
+  font-size: 150px;
+  font-weight: 400;
+  font-family: var(--font-audiowide);
+  color: #0012b4;
+  display: block;
+  max-width: 100%;
+  z-index: 2;
+}
+
+/* テキスト */
+.text-wrapper {
+  margin: 0 50px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 800;
+  font-family: var(--font-noto-sans-jp);
+  color: #000000;
+  display: block;
+  max-width: 100%;
+  z-index: 2;
+}
+
+/* ボタン */
+.btn-wrapper {
+  margin: 50px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-container {
+  text-align: center;
+  max-width: 250px;
+}
+
+.login-btn {
+  margin: 30px;
+  border-radius: 32px;
+  border-color: #FF8A8A;
+  background-color: #FF8A8A;
+}
+
+.registration-btn {
+  margin: 30px;
+  border-radius: 32px;
+  border-color: #FF8A8A;
+  background-color: #FF8A8A;
+}
+
+span {
+  padding: 0px 30px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 800;
+  font-family: var(--font-noto-sans-jp);
+}
+
+/* レスポンシブ */
+
+/* タブレットサイズ以下（768px以下） */
+@media screen and (max-width: 768px) {
+    /* ロゴテキスト */
+  .logo-wrapper {
+    margin-top: 8%;
+  text-align: center;
+  font-size: 100px;
+  font-weight: 400;
+  font-family: var(--font-audiowide);
+  color: #0012b4;
+  display: block;
+  max-width: 100%;
+  z-index: 2;
+  }
+
+    /* テキスト */
+  .text-wrapper {
+    margin: 0 90px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    font-family: var(--font-noto-sans-jp);
+    color: #000000;
+    display: block;
+    max-width: 100%;
+    z-index: 2;
+  }
+}
+
+/* スマホSサイズ（425px以下） */
+@media screen and (max-width: 425px) {
+    /* ロゴテキスト */
+  .logo-wrapper {
+    margin-top: 10%;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 400;
+  font-family: var(--font-audiowide);
+  color: #0012b4;
+  display: block;
+  max-width: 100%;
+  z-index: 2;
+  }
+
+    /* テキスト */
+  .text-wrapper {
+    margin: 0 90px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 800;
+    font-family: var(--font-noto-sans-jp);
+    color: #000000;
+    display: block;
+    max-width: 100%;
+    z-index: 2;
+  }
+}

@@ -1,0 +1,82 @@
+<div id="overlay"></div>
+
+<!-- 新規登録モーダル -->
+<div id="registrationModal" class="modal">
+  <span class="close" onclick="closeModal('registrationModal')">&times;</span>
+  
+  <form class="registration-form" method="post">
+      <h2>Club Chat 新規登録</h2>
+      <div>
+        <label for="name">名前</label>
+        <input
+          type="text"
+          placeholder="Name"
+          name="name"
+          id="name-input" required>
+      </div>
+      <div>
+        <label for="registrationEmail">メールアドレス</label>
+        <input
+          type="email"
+          placeholder="Email"
+          name="email"
+          id="email-input" required>
+      </div>
+      <div>
+        <label for="registrationPassword">パスワード</label>
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          id="password-input" required>
+      </div>
+      <div>
+        <label for="registrationPassword">確認用パスワード</label>
+        <input
+          type="password"
+          placeholder="Password"
+          name="password2"
+          id="password-input" required>
+      </div>
+      <div>
+        <label for="signup-club-input">部活</label>
+        <select name=”club” id="signup-club-serect" required>
+          <option value="" disabled selected style="display:none;">選択してください</option>
+          <optgroup label="運動部">
+            <option value=”soccer”>サッカー</option>
+            <option value=”tennis”>テニス</option>
+            <option value=”basketball”>バスケットボール</option>
+            <option value=”badminton”>バドミントン</option>
+            <option value=”volleyball”>バレーボール</option>
+            <option value=”rugby”>ラグビー</option>
+            <option value=”kendo”>剣道</option>
+            <option value=”tabletennis”>卓球</option>
+            <option value=”kyudo”>弓道</option>
+            <option value=”judo”>柔道</option>
+            <option value=”swimming”>水泳</option>
+            <option value=”karate”>空手</option>
+            <option value=”baseball”>野球</option>
+            <option value=”trackandfield”>陸上</option>
+          </optgroup>
+          <optgroup label="文化部">
+            <option value=”igo”>囲碁</option>
+            <option value=”drama”>演劇</option>
+            <option value=”flowerarrangement”>華道</option>
+            <option value=”choral”>合唱</option>
+            <option value=”band”>軽音</option>
+            <option value=”sado”>茶道</option>
+            <option value=”shogi”>将棋</option>
+            <option value=”calligraphy”>書道</option>
+            <option value=”brassband”>吹奏楽</option>
+            <option value=”dance”>ダンス</option>
+            <option value=”art”>美術</option>
+            <option value=”literature”>文芸</option>
+            <option value=”broadcasting”>放送</option>
+          </optgroup>
+        </select>
+      </div>
+    <button class="registration-button" type="submit">登録</button>
+    <button class="close-button" onclick="closeModal('registrationModal')">閉じる</button>
+  </form>
+  
+</div>
