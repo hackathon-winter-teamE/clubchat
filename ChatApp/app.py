@@ -19,16 +19,16 @@ def index():
 @app.route('/signup', methods=['POST'])
 def userSignup():
     uid = uuid.uuid4()
-    name = request.form.get('name')  ＃ユーザー名
-    email = request.form.get('email')　#メールアドレス
-    password1= request.form.get('password1')　#パスワード1回目
-    password2= request.form.get('password2')　#パスワード確認用
-    club= request.form.get('club')　＃部活名
+    name = request.form.get('name') #ユーザー名
+    email = request.form.get('email') #メールアドレス
+    password1= request.form.get('password1') #パスワード1回目
+    password2= request.form.get('password2') #パスワード確認用
+    club= request.form.get('club') #部活名
     
     pattern = "^[a-zA-z0-9_.+-]+@[a-zA-Zo-9-]+\.[a-zA-Z0-9-.]+$"
 
     #入力された内容を確認する
-    if name == '' or email=='' or password1 == '' or password2=='',club=='':
+    if name == '' or email=='' or password1 == '' or password2=='' or club=='':
         flash('空のフォームがあるようです')
     elif password1 != password2:
         flash('2つのパスワードが一致しません')
@@ -36,9 +36,9 @@ def userSignup():
         flash('メールアドレスが不正です')
     else:
     #DBに登録されていないことを確認
-    password = hashlib.sha256(password1,encode('utf-8')).hexdigest()
-    user = User(uid,name,email,password,club)  #clubが一致しなければOKなので部活変わっても問題ないはず
-    DBuser = dbConnect.getUser(email)
+        password = hashlib.sha256(password1,encode('utf-8')).hexdigest()
+        user = User(uid,name,email,password,club)  #clubが一致しなければOKなので部活変わっても問題ないはず
+        DBuser = dbConnect.getUser(email)
     
         if DBuser!=None:
             flash('登録済みです')
@@ -54,3 +54,4 @@ if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True)
 
 
+# @app.route('/ch', methods=['POST'])

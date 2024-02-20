@@ -1,4 +1,4 @@
-import mysql
+import pymysql
 from util.DB import DB
 from flask import abort
 
@@ -24,10 +24,9 @@ class dbConnect:
             sql = "SELECT * FROM clubs ORDER BY club_id ASC;"
             cur.execute(sql)
             clubs = cur.fetchall()
-            print(clubs)
             return clubs
         except Exception as e:
-            print(e + 'が発生しています')
+            print(str(e) + 'が発生しています')
             abort(500)
         finally:
             cur.close()
