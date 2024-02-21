@@ -4,7 +4,7 @@
 <div id="loginModal" class="modal">
     <span class="close" onclick="closeModal('loginModal')">&times;</span>
     
-    <form class="login-form" method="post">
+    <form class="login-form" action="{{ url_for('login_modal') }}" method="post">
       <h2>Club Chat ログイン</h2>
       <div>
         <label for="loginEmail">メールアドレス</label>

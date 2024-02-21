@@ -21,7 +21,7 @@ class dbConnect:
         try:
             conn = DB.getConnection()
             cur = conn.cursor()
-            sql = "SELECT * FROM clubs ORDER BY club_id ASC;"
+            sql = "SELECT club_name FROM clubs ORDER BY club_id ASC;"
             cur.execute(sql)
             clubs = cur.fetchall()
             print(clubs)

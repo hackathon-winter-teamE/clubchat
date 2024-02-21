@@ -4,7 +4,7 @@
 <div id="registrationModal" class="modal">
   <span class="close" onclick="closeModal('registrationModal')">&times;</span>
   
-  <form class="registration-form" method="post">
+  <form class="registration-form" action="{{ url_for('registration_modal') }}" method="post">
       <h2>Club Chat 新規登録</h2>
       <div>
         <label for="name">名前</label>
