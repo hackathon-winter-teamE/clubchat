@@ -33,9 +33,9 @@ body {
 }
 /* ロゴテキスト */
 .logo-wrapper {
-  margin-top: 8%;
+  margin-top: 8px;
   text-align: center;
-  font-size: 150px;
+  font-size: 128px;
   font-weight: 400;
   font-family: var(--font-audiowide);
   color: #0012b4;
@@ -48,7 +48,7 @@ body {
 .text-wrapper {
   margin: 0 50px;
   text-align: center;
-  font-size: 24px;
+  font-size: 21px;
   font-weight: 800;
   font-family: var(--font-noto-sans-jp);
   color: #000000;
