@@ -13,7 +13,7 @@ app.permanent_session_lifetime = timedelta(days=30)
 
 @app.route('/')
 def index():
-    clubs = dbConnect.getClubsAll()
+    clubs = ['選択してください'] + dbConnect.getClubsAll()
     return render_template('registration/top.html', clubs=clubs)
 
 @app.route('/', methods=['POST'])
