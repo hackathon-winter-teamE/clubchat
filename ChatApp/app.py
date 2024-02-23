@@ -51,7 +51,7 @@ def userLogin():
 # サインアップページの表示
 @app.route('/signup')
 def signup():
-    clubs =  ['選択してください'] + dbConnect.getClubs()
+    clubs = dbConnect.getClubs()
     return render_template('registration/signup.html', clubs=clubs)
 
 # サインアップ処理
@@ -61,11 +61,13 @@ def userSignup():
     email = request.form.get('email')
     password1 = request.form.get('password1')
     password2 = request.form.get('password2')
-    club_name = request.form.get('clubs')
+    selected_club_name = request.form.get('clubs')
+    club_id = 0
+    clubs = dbConnect.getClubs()
 
     pattern = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
 
-    if name == '' or email =='' or password1 == '' or password2 == '' or club_name == '':
+    if name == '' or email =='' or password1 == '' or password2 == '' or selected_club_name == '':
         flash('空のフォームがあります')
     elif password1 != password2:
         flash('二つのパスワードの値が違っています')
@@ -75,12 +77,15 @@ def userSignup():
         uid = uuid.uuid4()
         password = hashlib.sha256(password1.encode('utf-8')).hexdigest()
         DBuser = dbConnect.getUser(email)
-        club_id = dbConnect.getClubId(club_name)
 
         if DBuser != None:
             flash('既に登録されているようです')
         else:
-            dbConnect.createUser(uid, name, email, password,club_id)
+            for club in clubs:
+                if club['club_name'] == selected_club_name:
+                    club_id = club['club_id']
+
+            dbConnect.createUser(uid, name, email, password, club_id)
             UserId = str(uid)
             session['uid'] = UserId
             return redirect('/')
