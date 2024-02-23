@@ -12,18 +12,14 @@
     <input 
         type="text"
         placeholder="Name"
-        name="name"
+        name="channel_name"
         />
         <input 
         type="text"
-        placeholder="Email"
-        name="email"
+        placeholder="チャンネル説明"
+        name="channel_description"
         />
-        <input
-        type="password"
-        placeholder="Password"
-        name="password"
-        />
+       
         <select name = "club_id">
             {% for clubs in clubs %}
             <option value="{{clubs.club_id}}">{{clubs.club_name}}</option>
