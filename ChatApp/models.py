@@ -30,20 +30,6 @@ class dbConnect:
         finally:
             cur.close()
 
-    def getClubId(club_name):
-        try:
-            conn = DB.getConnection()
-            cur = conn.cursor()
-            sql = "SELECT club_id FROM clubs WHERE club_name=%s;"
-            cur.execute(sql, (club_name,))
-            clubid = cur.fetchone()
-            return clubid
-        except Exception as e:
-            print(str(e) + 'が発生しています')
-            abort(500)
-        finally:
-            cur.close()
-
 #DBから部活をとってくる
     def getClubs():
         try:

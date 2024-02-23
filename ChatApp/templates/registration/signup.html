@@ -24,8 +24,8 @@
       </div>
       <div>
         <label for="signup-club-input">部活</label>
-        <select name=”clubs” id="signup-club-serect">
-          <option value="" disabled selected>選択してください</option>
+        <select name="clubs" id="signup-club-serect">
+          <option disabled selected>選択してください</option>
           {% for club in clubs %}
           <option value="{{ club['club_name'] }}">{{ club['club_name'] }}</option>
           {% endfor %}
