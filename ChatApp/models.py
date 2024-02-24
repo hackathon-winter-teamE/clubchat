@@ -96,7 +96,7 @@ class dbConnect:
         try:
             conn = DB.getConnection()
             cur = conn.cursor()
-            sql = "SELECT * FROM channels;"
+            sql = "SELECT * FROM channels WHERE club_id = {club_id};"
             cur.execute(sql)
             channels = cur.fetchall()
             return channels
