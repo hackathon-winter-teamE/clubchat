@@ -8,7 +8,7 @@ GRANT ALL PRIVILEGES ON chatapp.* TO 'testuser';
 
 CREATE TABLE clubs (
     club_id serial PRIMARY KEY,
-    club_name text
+    club_name varchar(255) NOT NULL
 );
 
 CREATE TABLE users (
@@ -25,7 +25,7 @@ CREATE TABLE channels (
     name varchar(255) UNIQUE NOT NULL,
     abstract varchar(255),
     club_id integer REFERENCES clubs(club_id)
-    );
+);
 
 CREATE TABLE messages (
     id serial PRIMARY KEY,
