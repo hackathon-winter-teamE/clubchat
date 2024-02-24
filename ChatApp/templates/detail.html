@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>トークルーム</title>
+    <link rel="stylesheet" href="../static/css/detail.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<header>
+    <h1 class="header-title">Club Chat</h1>
+    <nav class="nav">
+        <ul class ="menu-group">
+            <a href="../templates/modal/update-channel.html" li class="menu-item"></li>チャンネル編集</a>
+            <a href="../templates/modal/delete-channel.html" li class="menu-item"></li>チャンネル削除</a>
+            <a href="../templates/modal/users.html" li class="menu-item"></li>ユーザー一覧</a>
+            <a href="index.html" li class="menu-item"></li>チャンネル一覧</a>
+        </ul>
+    </nav>
+</header>
+ <body class="detail">
+    <div class="detail-wrapper">
+        <div class="bg-img">
+            <div class="channel-name">
+              {{ channel.name }}
+              <!-- {% if channel.abstract is not none %}
+              {% endif %} -->
+              <!-- <button id="channel-update-button">
+                <ion-icon name="brush"></ion-icon>
+              </button>
+              {% include 'modal/update-channel.html' %} {% endif %} -->
+            </div>
+            <!-- <div class="channel-description">{{ channel.abstract }}</div> -->
+              <div id="message-area">
+                {% if messages|length > 0 %} {% for message in messages %} {% if message.uid == uid %}
+                    <div class="messages-right">
+                      <p class="box box-right">{{ message.message }}</p>
+                        <div class="time-right">
+                          <p>{{ message.created_at }}</p>
+                        </div>
+                      <form action="/delete_message" method="POST">
+                        <input type="hidden" value="{{ channel.id }}" name="cid" />
+                        <button
+                          class="delete-message-button"
+                          name="message_id"
+                          value="{{ message.id }}"
+                        >
+                        <ion-icon
+                        name="trash-bin-outline"
+                        style="color: #122543"
+                      ></ion-icon>
+                        </button>
+                       </form>
+                    </div>
+                    {% else %}
+                    <div class="messages-left">
+                      <p class="user-name">{{ message.user_name }}</p>
+                      <p class="box box-left">{{ message.message }}</p>
+                        <div class="time-left">
+                          <p>{{ message.created_at }}</p>
+                        </div>
+                    </div>
+                    {% endif %} {% endfor %} {% else %}
+                    <div id="no-message"><p>まだメッセージがありません</p></div>
+                    {% endif %}
+              </div>
+            </div> 
+                  <div class="typing-box-wrapper">
+                    <form
+                      class="typing-box"
+                      action="/message"
+                      method="POST"
+                      name="newMessageForm"
+                    >
+                    <textarea name="message" id="message" autofocus></textarea>
+                    <input type="hidden" name="cid" value="{{ channel.id }}" />
+                    <div id="message-send-tooltip">
+                      <button type="submit" id="add-message-button">
+                        <ion-icon name="paper-plane"></ion-icon>
+                      </button>
+                    </div>
+               </div>
+              
+    </div>
+ </body>
+ </html>
