@@ -21,7 +21,7 @@ CREATE TABLE users (
 
 CREATE TABLE channels (
     id serial PRIMARY KEY,
-    uid integer REFERENCES users(uid),
+    uid integer REFERENCES users(uid)
     name varchar(255) UNIQUE NOT NULL,
     abstract varchar(255),
     club_id integer REFERENCES clubs(club_id)
@@ -45,6 +45,9 @@ CREATE TABLE replies (
 
 INSERT INTO users(uid,user_name,email,password,club_id)
 VALUES('8defdaea-b411-43d3-8521-db7dc88e633b','na','ff@gmail.com','1234',1);
+
+INSERT INTO channels(id,name,abstract,club_id)
+VALUES(1,'TEST','',26);
 
 INSERT INTO clubs(club_id,club_name)
 VALUES(1,'サッカー部'),

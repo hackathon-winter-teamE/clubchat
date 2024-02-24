@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% block title %}
+<title>Club Chat</title>
+{% endblock %} {% block header %}
+<div class="header-container">
+  <div class="header-logo">
+    <p>Club Chat</p>
+  </div>
+  <div class="header-menu">
+    <a href="#">チャンネル作成</a>
+    <a href="#">ログアウト</a>
+  </div>
+</div>
+{% endblock %} {% block body %}
+<div class="main-container">
+  <div class="channel-title">
+    <p>{{ user_club_name }}</p>
+  </div>
+</div>
+
+<div id="channels-list-container">
+  <div id="channels-list">
+    <ul>
+      <li>{{ channels['name'] }}</li>
+      {% if channels is none %}
+      <p>チャンネルがありません</p>
+      {% endif %}
+    </ul>
+    <div id="pagination-wrapper">
+      <div>
+        <div class="pagination-container">
+          <p id="prev">
+            <
+            <span>PREV</span>
+          </p>
+          <ul class="pagination"></ul>
+          <p id="next">
+            <span>NEXT</span>
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

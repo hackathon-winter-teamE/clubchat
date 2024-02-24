@@ -17,10 +17,15 @@ def index():
     uid = session.get("uid")
     if uid is None:
         return redirect('/login')
-    # else:
-    #     channels = dbConnect.getChannelAll()
-    #     channels.reverse()
-    return render_template('test.html')
+    else:
+        user_club_id = dbConnect.getUserClubId(uid)
+        user_club_name = dbConnect.getUserClubName(user_club_id)
+        channels = dbConnect.getUserChannels(user_club_id)
+        print(user_club_name)
+        print(channels)
+        if channels is None:
+            return render_template('test.html')
+    return render_template('index.html', user_club_name=user_club_name, channels=channels)
 
 # ログインページの表示
 @app.route('/login')
