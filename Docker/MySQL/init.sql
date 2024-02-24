@@ -21,7 +21,7 @@ CREATE TABLE users (
 
 CREATE TABLE channels (
     id serial PRIMARY KEY,
-    uid integer REFERENCES users(uid)
+    uid varchar(255) REFERENCES users(uid)
     name varchar(255) UNIQUE NOT NULL,
     abstract varchar(255),
     club_id integer REFERENCES clubs(club_id)
