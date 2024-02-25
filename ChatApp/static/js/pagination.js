@@ -59,7 +59,7 @@ const pagination = async () => {
       if (uid === channel.uid) {
         const deleteButton = document.createElement("button");
         deleteButton.innerHTML =
-          '<ion-icon name="trash-bin-outline" style="color: #f57978"></ion-icon>';
+          '<ion-icon name="trash-bin-outline" style="color: #000000"></ion-icon>';
         deleteButton.classList.add("delete-button");
         li.appendChild(deleteButton);
         // ゴミ箱ボタンが押された時にdeleteモーダルを表示させる

@@ -62,7 +62,7 @@
 /* ========================================================== */
 
 #channels-list-container {
-  padding-top: 13vh;
+  padding-top: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,6 +98,7 @@
 .channel-box li a {
   color: grey;
   flex-grow: 1;
+  text-align: center;
 }
 
 .channel-box li a:hover {
@@ -130,6 +131,9 @@
 #add-channel-button {
   font-size: 22px;
   padding: 4px 0;
+  width: 60px;
+  height: 60px;
+  margin: 0 45%;
 }
 
 #add-channel-button:hover {
@@ -143,7 +147,7 @@
   background-color: var(--snow);
   z-index: 6;
   position: fixed;
-  top: 30vh;
+  /* top: 30vh; */
   right: 0;
   width: 100%;
   padding-top: 3vh;
@@ -151,7 +155,7 @@
 
 #pagination-wrapper > div {
   margin: auto;
-  width: fit-content;
+  width: 500px;
 }
 
 .pagination-container,
@@ -166,6 +170,7 @@
   /* margin-left: auto; */
   margin-top: 5vh;
   /* position: absolute; */
+  font-size: 24px;
 }
 
 .pagination-container * {
@@ -203,7 +208,7 @@
 #prev span,
 #next,
 #next span {
-  font-size: 8px;
+  font-size: 24px;
   color: var(--carbon);
   vertical-align: middle;
 }
@@ -238,13 +243,14 @@
 .tooltip-body {
   display: none;
   position: absolute;
+  width: 100vw;
   padding: 10px 16px;
-  font-size: 12px;
+  font-size: 24px;
   line-height: 1.6em;
-  color: var(--snow);
+  /* color: var(--snow);
   background: var(--navy_blue);
   border-top: 2px solid var(--snow);
-  box-shadow: 0 -3px 0 2px var(--navy_blue);
+  box-shadow: 0 -3px 0 2px var(--navy_blue); */
   min-width: 115px;
   z-index: 8;
 }
@@ -253,16 +259,20 @@
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  /* left: 50%; */
   border: 15px solid transparent;
   border-top: 15px solid var(--navy_blue);
-  margin-left: -15px;
+  /* margin-left: -15px; */
 }
 
 .channel-description-tooltip:hover .tooltip-body {
   display: inline-block;
-  top: -60px;
-  left: -20px;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  top: 200px;
+  left: -1%;
+  /* left: -20px; */
 }
 
 /* ========================================================== */
@@ -338,7 +348,7 @@
 
 @media screen and (min-width: 1400px) {
   .channel-box {
-    width: 60%;
+    width: 100%;
     margin: auto;
   }
 }

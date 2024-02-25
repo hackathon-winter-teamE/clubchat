@@ -135,7 +135,8 @@ def add_channel():
     # 入力されたチャンネル名と同じチャンネル名を取得
     # （ログインユーザーと同じclub_idのもののみ）
     channel = dbConnect.getChannelByName(channel_name,user_club_id)
-
+    print(user_club_id)
+    print(channel)
     # 重複が無い場合
     if channel == None :
         channel_description = request.form.get('channelDescription')
@@ -176,14 +177,47 @@ def delete_channel(cid):
             dbConnect.deleteChannel(cid)
             return redirect('/')
 
-
 # チャンネル詳細ページの表示
+@app.route('/detail/<cid>')
+def detail(cid):
+    uid = session.get("uid")
+    if uid is None:
+        return redirect('/login')
 
+    cid = cid
+    channel = dbConnect.getChannelById(cid)
+    messages = dbConnect.getMessageAll(cid)
 
-# メッセージの投稿
+    return render_template('detail.html', messages=messages, channel=channel, uid=uid)
 
+#メッセージの投稿
+@app.route('/message',methods=['POST'])
+def add_message():
+    uid = session.get("uid")
+    if uid is None:
+        return redirect('/login')
+    
+    message = request.form.get('newMessageForm')
+    cid = request.form.get('cid')
 
-# メッセージの削除
+    if message:
+        dbConnect.createMessage(uid,cid,message)
+
+    return redirect('/detail/{cid}'.format(cid = cid))
+
+#メッセージの削除
+@app.route('/delete_message',methods=['POST'])
+def delete_message():
+    uid =session.get("uid")
+    if uid is None:
+        return redirect('/login')
+    message_id = request.form.get('message_id')
+    cid = request.form.get('cid')
+
+    if message_id:
+        dbConnect,delete_message(message_id)
+
+    return redirect('/detail/{cid}'.format(cid = cid))
 
 
 # ログアウト
