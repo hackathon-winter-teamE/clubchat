@@ -21,15 +21,15 @@ CREATE TABLE users (
 
 CREATE TABLE channels (
     id serial PRIMARY KEY,
-    uid varchar(255) REFERENCES users(uid)
-    name varchar(255) UNIQUE NOT NULL,
+    uid varchar(255) REFERENCES users(uid),
+    name varchar(255) NOT NULL,
     abstract varchar(255),
     club_id integer REFERENCES clubs(club_id)
 );
 
 CREATE TABLE messages (
     id serial PRIMARY KEY,
-    uid integer REFERENCES users(uid),
+    uid varchar(255) REFERENCES users(uid),
     cid integer REFERENCES channels(id) ON DELETE CASCADE,
     message text,
     created_at timestamp not null default current_timestamp
@@ -37,7 +37,7 @@ CREATE TABLE messages (
 
 CREATE TABLE replies (
     id serial PRIMARY KEY,
-    uid integer REFERENCES users(uid),
+    uid varchar(255) REFERENCES users(uid),
     message_id integer REFERENCES message(id) ON DELETE CASCADE,
     message text,
     created_at timestamp not null default current_timestamp
@@ -46,8 +46,30 @@ CREATE TABLE replies (
 INSERT INTO users(uid,user_name,email,password,club_id)
 VALUES('8defdaea-b411-43d3-8521-db7dc88e633b','na','ff@gmail.com','1234',1);
 
-INSERT INTO channels(id,name,abstract,club_id)
-VALUES(1,'TEST','',26);
+INSERT INTO channels(id,uid,name,abstract,club_id)
+VALUES(1,'','TEST1','',26),
+      (2,'','TEST2','',26),
+      (3,'','TEST3','',26),
+      (4,'','TEST4','',26),
+      (5,'','TEST5','',26),
+      (6,'','TEST6','',26),
+      (7,'','TEST7','',26),
+      (8,'','TEST8','',26),
+      (9,'','TEST9','',26),
+      (10,'','TEST10','',26),
+      (11,'','TEST11','',26),
+      (12,'','TEST12','',26),
+      (13,'','TEST13','',26),
+      (14,'','TEST14','',26),
+      (15,'','TEST15','',26),
+      (16,'','TEST16','',26),
+      (17,'','TEST17','',26),
+      (18,'','TEST18','',26),
+      (19,'','TEST19','',26),
+      (20,'','TEST20','',26),
+      (21,'','TEST21','',26),
+      (22,'','TEST22','',26),
+      (23,'','TEST23','',26);
 
 INSERT INTO clubs(club_id,club_name)
 VALUES(1,'サッカー部'),

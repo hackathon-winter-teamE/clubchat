@@ -1,4 +1,18 @@
 /* ロゴテキスト */
+.main-container {
+  min-height: 90vh;
+  /* padding-left: 60px; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+li {
+  list-style: none;
+}
+
 .logo-wrapper {
   margin-top: 8px;
   text-align: center;
