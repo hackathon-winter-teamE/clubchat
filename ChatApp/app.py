@@ -103,5 +103,45 @@ def logout():
     return redirect('/login')
 
 
+#メッセージの投稿
+@app.route('/message',methods=['POST'])
+def add_message():
+    uid = session.get("uid")
+    if uid is None:
+        return redirect('/login')
+    
+    message = request.form.get('message')
+    cid = request.form.get('cid')
+
+    if message:
+        dbConnect.createMessage(uid,cid,message)
+
+    return redirect('/detail/{cid}'.format(cid = cid))
+
+#メッセージの削除
+@app.route('/delete_message',methods=['POST'])
+def delete_message():
+    uid =session.get("uid")
+    if uid is None:
+        return redirect('/login')
+    message_id = request.form.get('message_id')
+    cid = request.form.get('cid')
+
+    if message_id:
+        dbConnect,delete_message(message_id)
+
+    return redirect('/detail/{cid}'.format(cid = cid))
+
+
+@app.errorhandler(404)
+def error404(error):
+    return render_template('error/404.html'),404
+
+@app.errorhandler(500)
+def error500(error):
+    return render_template('error/500.html'),500
+
+
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True)

@@ -53,8 +53,8 @@ class dbConnect:
             cur = conn.cursor()
             sql = "SELECT club_name FROM clubs WHERE club_id=%s;"
             cur.execute(sql, (user_club_id))
-            ucname = cur.fetchone()
-            user_club_name = ucname['club_name']
+            name = cur.fetchone()
+            user_club_name = name['club_name']
             return user_club_name
         except Exception as e:
             print(str(e) + 'が発生しています２')
@@ -105,4 +105,57 @@ class dbConnect:
             abort(500)
         finally:
             cur.close()
+
+
+    #メッセージを挿入する
+    def createMessage(uid,cid,message):
+        try:
+            conn = DB.getConnection()
+            cur = conn.cursor
+            sql = "INSERT INTO messages(uid,cid,message)VALUES(%S,%S,%S);"
+            cur.execute(sql,(uid,cid,message))
+            conn.commit()
+        except Exception as e:
+            print(str(e)+'が発生しています')
+            abort(500)
+        finally:
+            cur.close()
+
+    #メッセージを削除する
+    def deleteMessage(message_id):
+        try:
+            conn = DB.getConnection()
+            cur = conn.cursor()
+            sql = "DELETE FROM messages WHERE id=%S"
+            cur.execute(sql,(message_id))
+            conn.commit()
+        except Exception as e:
+            print(str(e)+'が発生しています')
+            abort(500)
+        finally:
+            cur.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
