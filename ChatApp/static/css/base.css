@@ -1,0 +1,99 @@
+/* ロゴテキスト */
+.main-container {
+  min-height: 90vh;
+  /* padding-left: 60px; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+.logo-wrapper {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 128px;
+  font-weight: 400;
+  font-family: var(--font-audiowide);
+  color: #0012b4;
+  display: block;
+  max-width: 100%;
+  z-index: 2;
+}
+
+/* テキスト */
+.text-wrapper {
+  margin: 0 50px;
+  text-align: center;
+  font-size: 21px;
+  font-weight: 800;
+  font-family: var(--font-noto-sans-jp);
+  color: #000000;
+  display: block;
+  max-width: 100%;
+  z-index: 2;
+}
+
+/* レスポンシブ */
+
+/* タブレットサイズ以下（768px以下） */
+@media screen and (max-width: 768px) {
+    /* ロゴテキスト */
+  .logo-wrapper {
+    margin-top: 8%;
+  text-align: center;
+  font-size: 100px;
+  font-weight: 400;
+  font-family: var(--font-audiowide);
+  color: #0012b4;
+  display: block;
+  max-width: 100%;
+  z-index: 2;
+  }
+
+    /* テキスト */
+  .text-wrapper {
+    margin: 0 90px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    font-family: var(--font-noto-sans-jp);
+    color: #000000;
+    display: block;
+    max-width: 100%;
+    z-index: 2;
+  }
+}
+
+/* スマホSサイズ（425px以下） */
+@media screen and (max-width: 425px) {
+    /* ロゴテキスト */
+  .logo-wrapper {
+    margin-top: 10%;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 400;
+  font-family: var(--font-audiowide);
+  color: #0012b4;
+  display: block;
+  max-width: 100%;
+  z-index: 2;
+  }
+
+    /* テキスト */
+  .text-wrapper {
+    margin: 0 90px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 800;
+    font-family: var(--font-noto-sans-jp);
+    color: #000000;
+    display: block;
+    max-width: 100%;
+    z-index: 2;
+  }
+}

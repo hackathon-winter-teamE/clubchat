@@ -1,276 +1,276 @@
 .detail {
-    margin: 0;
-  }
+  margin: 0;
+}
 
 
 header {
-  display: flex;
-  width: 100%;
-  height: 50px;
-  background: linear-gradient(rgba(255,243,210,1), rgba(255,232,171,1));
-  border-bottom: 5px solid #CAA1FF;
-  border-bottom-width: 100%;
-  align-items: center;
-  margin: 0;
-  }
+display: flex;
+width: 100%;
+height: 50px;
+background: linear-gradient(rgba(255,243,210,1), rgba(255,232,171,1));
+border-bottom: 5px solid #CAA1FF;
+border-bottom-width: 100%;
+align-items: center;
+margin: 0;
+}
 .header-title {
-  margin-right: auto;
-  color: #0012B4;
-  font-family: 'Audiowide', sans-serif;
+margin-right: auto;
+color: #0012B4;
+font-family: 'Audiowide', sans-serif;
 }
 .menu-item {
-  list-style: none;
-  display: inline-block;
-  padding: 10px;
-  color: #3D3D3D;
-  text-decoration: none;  /* 下線消去 */
+list-style: none;
+display: inline-block;
+padding: 10px;
+color: #3D3D3D;
+text-decoration: none;  /* 下線消去 */
 }
 
-  
+
 .detail-wrapper {
-  min-height: 100vh;
-  min-height: 100svh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  background-color: #E4E0CD;
+min-height: 100vh;
+min-height: 100svh;
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 0;
+background-color: #E4E0CD;
 }
 .bg-img {
-  background: url("../img/Background.png");
-  width: 100%;
-  min-height: 100vh;
-  background-size:cover,50%;
-  background-position:50%;
-  position: relative;
+background: url("../img/Background.png");
+width: 100%;
+min-height: 100vh;
+background-size:cover,50%;
+background-position:50%;
+position: relative;
 }
 
 .channel-name {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative; /* テキストを一番上へ */
-  z-index: 1; /* テキストを一番上へ */
-  margin-top: 1%;
-  font-size: 1.8rem;
-  color: #707070;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+position: relative; /* テキストを一番上へ */
+z-index: 1; /* テキストを一番上へ */
+margin-top: 1%;
+font-size: 1.8rem;
+color: #707070;
 }
 #channel-update-button {
-  border: none;
-  background-color: transparent;
-  margin-top: 10px;
-  margin-bottom: 0;
+border: none;
+background-color: transparent;
+margin-top: 10px;
+margin-bottom: 0;
 }
 
 #channel-update-button ion-icon {
-  font-size: 0.8rem;
-  color: #707070;
+font-size: 0.8rem;
+color: #707070;
 }
 #message-area {
-  min-height: 100vh;
-  width: 100%;
-  padding-top: 2%;
-  padding-bottom: calc(20vh + 10px);
-  overflow-y: scroll;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
+min-height: 100vh;
+width: 100%;
+padding-top: 2%;
+padding-bottom: calc(20vh + 10px);
+overflow-y: scroll;
+overflow-x: hidden;
+display: flex;
+flex-direction: column;
+gap: 0.6rem;
 }
 
 ::-webkit-scrollbar {
-  width: 0px;
+width: 0px;
 }
 .messages-left {
-  display: flex;
-  flex-direction: column;
-  float: left;
-  margin-left: 5%;
+display: flex;
+flex-direction: column;
+float: left;
+margin-left: 5%;
 }
 
 .user-name {
-  font-size: 12px;
-  margin: 1px 0;
+font-size: 12px;
+margin: 1px 0;
 }
 
 .time-left p{
-  margin-top: 0;
-  font-size: 11px;
-  color: grey;
+margin-top: 0;
+font-size: 11px;
+color: grey;
 }
 
 .messages-right {
-  display: flex;
-  float: right;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  margin-right: 5%;
+display: flex;
+float: right;
+flex-direction: column;
+flex-wrap: nowrap;
+margin-right: 5%;
 }
 
 .time-right p{
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 11px;
-  color: grey;
-  display:flex;
-  justify-content: flex-end;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  float: right;
+margin-top: 0;
+margin-bottom: 0;
+font-size: 11px;
+color: grey;
+display:flex;
+justify-content: flex-end;
+flex-direction: column;
+flex-wrap: nowrap;
+float: right;
 }
 
 .delete-message-button {
-  background-color: transparent;
-  height: 20px;
-  width: 20px;
-  line-height: 20px;
-  padding: 0;
-  margin: 0;
-  bottom: 8px;
-  right: 8px;
-  border: none;
-  display:flex;
-  float: right;
+background-color: transparent;
+height: 20px;
+width: 20px;
+line-height: 20px;
+padding: 0;
+margin: 0;
+bottom: 8px;
+right: 8px;
+border: none;
+display:flex;
+float: right;
 }
 
 .box {
-  position: relative;
-  max-width: 70%;
-  margin: 0;
-  padding: 0.7em 0 0.4em 1em;
-  font-size: 14px;
-  line-height: 1.5;
-  letter-spacing: 0.1em;
-  white-space: pre-wrap;
-  font-size: 16px;
-  word-wrap: break-word;/* 吹き出し内で自動で改行 */
-  white-space: normal;/*指定widthに合わせて、文字を自動的に改行*/
+position: relative;
+max-width: 70%;
+margin: 0;
+padding: 0.7em 0 0.4em 1em;
+font-size: 14px;
+line-height: 1.5;
+letter-spacing: 0.1em;
+white-space: pre-wrap;
+font-size: 16px;
+word-wrap: break-word;/* 吹き出し内で自動で改行 */
+white-space: normal;/*指定widthに合わせて、文字を自動的に改行*/
 }
 
 .box-left {
-  background-color: #FFFFFF;
-  line-height: 1.3em;
-  border-style: solid;
-  border-color: #88FF50;
-  border-radius: 10px;
-  position: relative; 
-  z-index: 1; 
+background-color: #FFFFFF;
+line-height: 1.3em;
+border-style: solid;
+border-color: #88FF50;
+border-radius: 10px;
+position: relative; 
+z-index: 1; 
 }
 .box-right {
-  background-color: #88FF50;
-  line-height: 1.3em;
-  border-radius: 10px;
-  margin-left: auto;
-  position: relative; 
-  z-index: 1; 
+background-color: #88FF50;
+line-height: 1.3em;
+border-radius: 10px;
+margin-left: auto;
+position: relative; 
+z-index: 1; 
 }
 .box-left:before {
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  content: "";
+position: absolute;
+top: 3px;
+left: 3px;
+width: 100%;
+height: 100%;
+border-radius: 10px;
+content: "";
 }
 .box-right:before {
-  position: absolute;
-  top: 3px;
-  right: 3px;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  content: "";
+position: absolute;
+top: 3px;
+right: 3px;
+width: 100%;
+height: 100%;
+border-radius: 10px;
+content: "";
 }
 
 #no-message {
-  padding-top: 54px;
-  width: 100%;
-  height: calc(100vh - (54px + 15vh));
-  display: flex;
-  justify-content: center;
-  align-items: center;
+padding-top: 54px;
+width: 100%;
+height: calc(100vh - (54px + 15vh));
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 #no-message p {
-  display: inline;
+display: inline;
 }
 
 
 /* ============タイピングエリア=========== */
 .typing-box-wrapper {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 15vh;
-  background-color: rgba(255,255,255,0.55);
-  background-size: contain;
-  /* border-top: 3px solid lightgrey; */
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  margin: 0;
-  padding: 0;
+position: fixed;
+bottom: 0;
+width: 100%;
+height: 15vh;
+background-color: rgba(255,255,255,0.55);
+background-size: contain;
+/* border-top: 3px solid lightgrey; */
+display: flex;
+align-items: center;
+justify-content: start;
+margin: 0;
+padding: 0;
 }
 
 .typing-box {
-  height: 80%;
-  width: 80%;
-  margin: auto;
-  position: relative;
-  background-color: #FFFFFF;
-  display: flex;
-  border-radius: 10px;
+height: 80%;
+width: 80%;
+margin: auto;
+position: relative;
+background-color: #FFFFFF;
+display: flex;
+border-radius: 10px;
 }
 
 .typing-box textarea {
-  background-color: transparent;
-  width: 100%;
-  padding: 0.5em;
-  border-radius: 10px;
-  flex-grow: 1;
+background-color: transparent;
+width: 100%;
+padding: 0.5em;
+border-radius: 10px;
+flex-grow: 1;
 }
 
 .typing-box textarea:focus {
-  cursor: pointer;
+cursor: pointer;
 }
 
 #add-message-button {
-  background-color: hsl(202, 100%, 56%);
-  border-radius: 10px;
-  height: 100%;
-  width: 50px;
-  padding: 0;
-  margin: 0;
-  border: none;
-  cursor: pointer;
-  transition: .3s;
+background-color: hsl(202, 100%, 56%);
+border-radius: 10px;
+height: 100%;
+width: 50px;
+padding: 0;
+margin: 0;
+border: none;
+cursor: pointer;
+transition: .3s;
 }
 #add-message-button:hover {
-  background: #0012B4;
+background: #0012B4;
 }
 
 #add-message-button ion-icon {
-  font-size: 1.3rem;
-  color: #ffffff;
+font-size: 1.3rem;
+color: #ffffff;
 }
 
 /* ================================================== */
 /* レスポンシブ */
 @media screen and (max-width: 639px) {
-  .chat-box {
-    padding-left: 0;
-    width: 100%;
-  }
+.chat-box {
+  padding-left: 0;
+  width: 100%;
+}
 
-  .typing-box-wrapper {
-    width: 100%;
-  }
+.typing-box-wrapper {
+  width: 100%;
+}
 }
 
 @media only screen and (min-width: 640px) {
-  .box {
-    width: 40%;
-  }
+.box {
+  width: 40%;
+}
 }

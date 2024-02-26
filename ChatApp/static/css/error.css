@@ -17,10 +17,10 @@
   width: 100%;
   min-height: 100vh;
   background-size: cover;
-  /* background-position:50%;
-  position: relative; */
+  background-position:50%;
+  position: relative;
 }
-/* .bg-img::after {
+.bg-img::after {
   content: '';
   background-color: rgba(228,224,205,0.95);
   position: absolute;
@@ -28,7 +28,7 @@
   right: 0;
   top: 0;
   bottom: 0;
-} */
+}
 
 .error-content {
   height: 70%;
