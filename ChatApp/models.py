@@ -172,7 +172,7 @@ class dbConnect:
         try:
             conn = DB.getConnection()
             cur = conn.cursor()
-            sql = "SELECT id,u.uid, user_name, message FROM messages AS m INNER JOIN users AS u ON m.uid = u.uid WHERE cid = %s;"
+            sql = "SELECT id,u.uid, u.user_name, message, created_at FROM messages AS m INNER JOIN users AS u ON m.uid = u.uid WHERE cid = %s;"
             cur.execute(sql, (cid))
             messages = cur.fetchall()
             return messages
@@ -186,9 +186,9 @@ class dbConnect:
     def createMessage(uid,cid,message):
         try:
             conn = DB.getConnection()
-            cur = conn.cursor
+            cur = conn.cursor()
             sql = "INSERT INTO messages (uid, cid, message) VALUES (%s, %s, %s);"
-            cur.execute(sql,(uid,cid,message))
+            cur.execute(sql, (uid,cid,message))
             conn.commit()
         except Exception as e:
             print(str(e)+'が発生しています')
