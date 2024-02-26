@@ -25,7 +25,7 @@ def index():
         # 取得したclub_idから所属している部活のチャンネル一覧を取得
         channels = dbConnect.getUserChannels(user_club_id)
         # 取得したチャンネルを新しい順に並べ替え
-        channels.reverse()
+        #channels.reverse()
     return render_template('index.html', user_club_name=user_club_name, channels=channels, uid=uid)
 
 # ログインページの表示
