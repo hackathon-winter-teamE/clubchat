@@ -1,11 +1,11 @@
 header {
   height: 64px;
   width: 100%;
-  background-color: bisque;
+  background: linear-gradient(rgba(255,243,210,1), rgba(255,232,171,1));
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 3px solid #caa1ff;
+  border-bottom: 5px solid #caa1ff;
 }
 
 .header-logo {
