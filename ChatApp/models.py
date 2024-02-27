@@ -201,7 +201,7 @@ class dbConnect:
         try:
             conn = DB.getConnection()
             cur = conn.cursor()
-            sql = "DELETE FROM messages WHERE id=%S"
+            sql = "DELETE FROM messages WHERE id=%s"
             cur.execute(sql,(message_id))
             conn.commit()
         except Exception as e:

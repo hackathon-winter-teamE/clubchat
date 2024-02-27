@@ -1,8 +1,8 @@
 <div id="update-channel-modal" class="modal">
   <div class="modal-content">
     <div class="modal-header">
-      <h5>Edit Channel</h5>
-      <span class="modalClose" id="update-page-close-button">×</span>
+      <h2>チャンネル編集</h2>
+      <span class="modalClose" id="update-page-close-button2">×</span>
     </div>
     <form
       name="updateChannelForm"
@@ -10,12 +10,14 @@
       action="/update_channel"
       method="POST"
     >
+      <label>チャンネル名</label>
       <input
         type="text"
         placeholder="Channel name"
         class="channel-form-input"
         name="channelTitle"
       />
+      <label>チャンネル説明</label>
       <input
         type="text"
         placeholder="Channel description"
@@ -23,7 +25,7 @@
         name="channelDescription"
       />
       <input type="hidden" name="cid" value="{{ channel.id }}" />
-      <button>EDIT</button>
+      <button>編集</button>
     </form>
   </div>
 </div>

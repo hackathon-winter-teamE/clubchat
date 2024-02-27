@@ -215,7 +215,7 @@ def delete_message():
     cid = request.form.get('cid')
 
     if message_id:
-        dbConnect,delete_message(message_id)
+        dbConnect.deleteMessage(message_id)
 
     return redirect('/detail/{cid}'.format(cid = cid))
 
