@@ -1,9 +1,9 @@
 // チャンネルを更新する時の処理
 
-const updateButton = document.getElementById("channel-update-button");
+const updateButton = document.getElementById("channel-update-button2");
 const updateChannelModal = document.getElementById("update-channel-modal");
 const updatePageButtonClose = document.getElementById(
-  "update-page-close-button"
+  "update-page-close-button2"
 );
 
 // モーダルが存在するページのみ（uidとチャンネルidが同じ時のみ）
@@ -24,4 +24,13 @@ if (updateChannelModal) {
       updateChannelModal.style.display = "none";
     }
   });
+}
+
+// update-channel-modalが表示されている時に Ctrl/Command + Enter で送信
+function sendUpdateForm() {
+  const newChannelTitle = document.updateChannelForm.channelTitle.value;
+
+  if (newChannelTitle !== "") {
+    document.updateChannelForm.submit();
+  }
 }

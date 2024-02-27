@@ -33,6 +33,7 @@ margin-right: 25px;
   display: block;
   float: left;
   transition: all 0.5s;
+  cursor: pointer;
 }
 
 .header-menu a:hover {

@@ -10,9 +10,13 @@ const addChannelConfirmButton = document.getElementById(
 // (チャンネル一覧を表示する処理が終わるまでaddChannnelButtonは存在しないためundefinedになる)
 const loadAddChannelButton = () => {
   const addChannelButton = document.getElementById("add-channel-button");
+  const addChannelButton2 = document.getElementById("header-add-channel-button");
 
   // モーダル表示ボタンが押された時にモーダルを表示する
   addChannelButton.addEventListener("click", () => {
+    addChannelModal.style.display = "flex";
+  });
+  addChannelButton2.addEventListener("click", () => {
     addChannelModal.style.display = "flex";
   });
 };
