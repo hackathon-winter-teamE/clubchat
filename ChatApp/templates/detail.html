@@ -13,6 +13,7 @@
 
 </head>
 <header>
+
   <div class="header-container">
     <div class="header-logo">
       <p>Club Chat</p>
@@ -75,7 +76,6 @@
                       class="typing-box"
                       action="/message"
                       method="POST"
-                      
                     >
                     <textarea name="newMessageForm" id="message" autofocus></textarea>
                     <input type="hidden" name="cid" value="{{ channel.id }}" />
