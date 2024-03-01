@@ -31,45 +31,50 @@ CREATE TABLE messages (
     id serial PRIMARY KEY,
     uid varchar(255) REFERENCES users(uid),
     cid integer REFERENCES channels(id) ON DELETE CASCADE,
+    reply_id integer,
     message text,
     created_at timestamp not null default current_timestamp
 );
 
 CREATE TABLE replies (
     id serial PRIMARY KEY,
-    uid varchar(255) REFERENCES users(uid),
-    message_id integer REFERENCES message(id) ON DELETE CASCADE,
-    message text,
-    created_at timestamp not null default current_timestamp
+    user_name varchar(255),
+    reply_id integer NOT NULL,
+    message text REFERENCES messages(message) ON DELETE CASCADE
 );
 
 INSERT INTO users(uid,user_name,email,password,club_id)
 VALUES('8defdaea-b411-43d3-8521-db7dc88e633b','na','ff@gmail.com','1234',1);
 
 INSERT INTO channels(id,uid,name,abstract,club_id)
-VALUES(1,'','TEST1','',26),
-      (2,'','TEST2','',26),
-      (3,'','TEST3','',26),
-      (4,'','TEST4','',26),
-      (5,'','TEST5','',26),
-      (6,'','TEST6','',26),
-      (7,'','TEST7','',26),
-      (8,'','TEST8','',26),
-      (9,'','TEST9','',26),
-      (10,'','TEST10','',26),
-      (11,'','TEST11','',26),
-      (12,'','TEST12','',26),
-      (13,'','TEST13','',26),
-      (14,'','TEST14','',26),
-      (15,'','TEST15','',26),
-      (16,'','TEST16','',26),
-      (17,'','TEST17','',26),
-      (18,'','TEST18','',26),
-      (19,'','TEST19','',26),
-      (20,'','TEST20','',26),
-      (21,'','TEST21','',26),
-      (22,'','TEST22','',26),
-      (23,'','TEST23','',26);
+VALUES(1,'','TEST','',1),
+      (2,'','TEST','',2),
+      (3,'','TEST','',3),
+      (4,'','TEST','',4),
+      (5,'','TEST','',5),
+      (6,'','TEST','',6),
+      (7,'','TEST','',7),
+      (8,'','TEST','',8),
+      (9,'','TEST','',9),
+      (10,'','TEST','',10),
+      (11,'','TEST','',11),
+      (12,'','TEST','',12),
+      (13,'','TEST','',13),
+      (14,'','TEST','',14),
+      (15,'','TEST','',15),
+      (16,'','TEST','',16),
+      (17,'','TEST','',17),
+      (18,'','TEST','',18),
+      (19,'','TEST','',19),
+      (20,'','TEST','',20),
+      (21,'','TEST','',21),
+      (22,'','TEST','',22),
+      (23,'','TEST','',23),
+      (24,'','TEST','',24),
+      (25,'','TEST','',25),
+      (26,'','TEST','',26),
+      (27,'','TEST','',27),
+      (28,'','TEST','',28);
 
 INSERT INTO clubs(club_id,club_name)
 VALUES(1,'サッカー部'),

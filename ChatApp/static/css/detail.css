@@ -2,6 +2,7 @@
   margin: 0;
 }
 
+
 :root {
   /* fonts */
   --font-inter: Inter;
@@ -121,6 +122,11 @@ float: left;
 margin-left: 5%;
 }
 
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
 .user-name {
 font-size: 12px;
 margin: 1px 0;
@@ -216,6 +222,16 @@ border-radius: 10px;
 content: "";
 }
 
+.reply {
+  background-color: #FFFFFF;
+line-height: 1.3em;
+border-style: solid;
+border-color: #88FF50;
+border-radius: 10px;
+position: relative; 
+z-index: 1; 
+}
+
 #no-message {
 padding-top: 54px;
 width: 100%;
@@ -244,6 +260,7 @@ align-items: center;
 justify-content: start;
 margin: 0;
 padding: 0;
+z-index: 5;
 }
 
 .typing-box {

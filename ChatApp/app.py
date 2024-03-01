@@ -25,7 +25,8 @@ def index():
         # 取得したclub_idから所属している部活のチャンネル一覧を取得
         channels = dbConnect.getUserChannels(user_club_id)
         # 取得したチャンネルを新しい順に並べ替え
-        # channels.reverse()
+        if channels:
+          channels.reverse()
     return render_template('index.html', user_club_name=user_club_name, channels=channels, uid=uid)
 
 # ログインページの表示
@@ -186,9 +187,10 @@ def detail(cid):
 
     cid = cid
     channel = dbConnect.getChannelById(cid)
-    messages = dbConnect.getMessageAll(cid)
-
-    return render_template('detail.html', messages=messages, channel=channel, uid=uid)
+    messages = dbConnect.getChannelMessageAll(cid)
+    replies = dbConnect.getReplyAll()
+    print(replies)
+    return render_template('detail.html', replies=replies, messages=messages, channel=channel, uid=uid)
 
 #メッセージの投稿
 @app.route('/message',methods=['POST'])
@@ -199,10 +201,19 @@ def add_message():
     
     message = request.form.get('newMessageForm')
     cid = request.form.get('cid')
-
+    reply_id = request.form.get('reply-id')
+    reply_user_name = request.form.get('reply_user_name')
+    reply_message = request.form.get('reply_message')
+    print(reply_id)
+    print(reply_user_name)
+    print(reply_message)
     if message:
-        dbConnect.createMessage(uid, cid, message)
-
+        if reply_id:
+            dbConnect.createMessage(uid, cid, message, reply_id)
+            dbConnect.createReply(reply_user_name, reply_id, reply_message)
+        else:
+            dbConnect.createMessage(uid, cid, message, reply_id)
+    
     return redirect('/detail/{cid}'.format(cid = cid))
 
 #メッセージの削除
