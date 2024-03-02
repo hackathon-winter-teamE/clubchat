@@ -168,11 +168,11 @@ class dbConnect:
         finally:
             cur.close()
 
-    def getMessageAll(cid):
+    def getChannelMessageAll(cid):
         try:
             conn = DB.getConnection()
             cur = conn.cursor()
-            sql = "SELECT id, u.uid, u.user_name, message, created_at FROM messages AS m INNER JOIN users AS u ON m.uid = u.uid WHERE cid = %s;"
+            sql = "SELECT id, u.uid, u.user_name, message, reply_id, created_at FROM messages AS m INNER JOIN users AS u ON m.uid = u.uid WHERE cid = %s;"
             cur.execute(sql, (cid))
             messages = cur.fetchall()
             return messages
@@ -182,13 +182,40 @@ class dbConnect:
         finally:
             cur.close()
 
-    #メッセージを挿入する
-    def createMessage(uid,cid,message):
+    def getReplyAll():
         try:
             conn = DB.getConnection()
             cur = conn.cursor()
-            sql = "INSERT INTO messages (uid, cid, message) VALUES (%s, %s, %s);"
-            cur.execute(sql, (uid,cid,message))
+            sql = "SELECT * FROM replies;"
+            cur.execute(sql)
+            replies = cur.fetchall()
+            return replies
+        except Exception as e:
+            print(e + 'が発生しています')
+            abort(500)
+        finally:
+            cur.close()
+
+    def createReply(reply_user_name, reply_id, reply_message):
+        try:
+            conn = DB.getConnection()
+            cur = conn.cursor()
+            sql = "INSERT INTO replies (user_name, reply_id, message) VALUES (%s, %s, %s);"
+            cur.execute(sql,(reply_user_name, reply_id, reply_message))
+            conn.commit()
+        except Exception as e:
+            print(str(e)+'が発生しています')
+            abort(500)
+        finally:
+            cur.close()
+
+    #メッセージを挿入する
+    def createMessage(uid,cid,message,reply_id):
+        try:
+            conn = DB.getConnection()
+            cur = conn.cursor()
+            sql = "INSERT INTO messages (uid, cid, message,reply_id) VALUES (%s, %s, %s, %s);"
+            cur.execute(sql, (uid,cid,message,reply_id))
             conn.commit()
         except Exception as e:
             print(str(e)+'が発生しています')
@@ -209,18 +236,3 @@ class dbConnect:
             abort(500)
         finally:
             cur.close()
-
-    def getChannelAll():
-        try:
-            conn = DB.getConnection()
-            cur = conn.cursor()
-            sql = "SELECT * FROM channels WHERE club_id = {club_id};"
-            cur.execute(sql)
-            channels = cur.fetchall()
-            return channels
-        except Exception as e:
-            print(e + 'が発生しています')
-            abort(500)
-        finally:
-            cur.close()
-
