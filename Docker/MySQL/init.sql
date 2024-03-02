@@ -31,7 +31,7 @@ CREATE TABLE messages (
     id serial PRIMARY KEY,
     uid varchar(255) REFERENCES users(uid),
     cid integer REFERENCES channels(id) ON DELETE CASCADE,
-    reply_id integer,
+    reply_id varchar(255),
     message text,
     created_at timestamp not null default current_timestamp
 );
@@ -39,7 +39,7 @@ CREATE TABLE messages (
 CREATE TABLE replies (
     id serial PRIMARY KEY,
     user_name varchar(255),
-    reply_id integer NOT NULL,
+    reply_id varchar(255),
     message text REFERENCES messages(message) ON DELETE CASCADE
 );
 
